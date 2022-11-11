@@ -53,7 +53,26 @@ claim.lower()
 # Searching for the first index of a substring
 claim.index('plan')
 
-claim.startswith(planet)
+print(claim.startswith(planet))
+# planet = 'Pluto'
+
+# false because of missing exclamation mark
+print(claim.endswith('planet'))
+# claim = "Pluto is a planet!"
+
+# Going between strings and lists: 
+# str.split() turns a string into a list of smaller strings, breaking on whitespace by default.
+words = claim.split()
+print(words)
+
+# Split on something other than whitespace
+datestr = '1956-01-31'
+year, month, day = datestr.split('-')
+print(year, month, day)
+
+# str.join() takes us in the other direction, sewing a list of strings up into one long string, 
+# using the string it was called on as a separator.
+print('/'.join([month, day, year]))
 
 # Building strings with .format()
 # Python lets us concatenate strings with the + operator.
@@ -61,6 +80,28 @@ planet + ', we miss you.'
 
 # If we want to throw in any non-string objects, we have to be careful to call str() on them first
 position = 9
-planet + ", you'll always be the " + position + "th planet to me."
+print(planet + ", you'll always be the " + str(position) + "th planet to me.")
+
+print("{}, you'll always be the {}th planet to me.".format(planet, position))
+
+# Dictionaries
+# Dictionaries are a built-in Python data structure for mapping keys to values.
+numbers = {'one':1, 'two':2, 'three':3}
+print(numbers['one'])
+
+# Use the same syntax to add another key, value pair
+numbers['eleven'] = 11
+print(numbers)
+
+# Change the value associated with an existing key
+numbers['one'] = 'Pluto'
+print(numbers)
+
+# Python has dictionary comprehensions with a syntax similar to  the list comprehensions
+planets = ['Mercury', 'Venus', 'Earth', 'Mars', 'Jupiter', 'Saturn', 'Uranus', 'Neptune']
+planet_to_initial = {planet: planet[0] for planet in planets}
+print(planet_to_initial)
+
+
 
 
