@@ -33,7 +33,7 @@ with dataset:
     st.title('VNINDEX')
     st.text('This contains 400 stock codes but my ass will choose only 9 of them.')
 
-    VNI_data = getData('data/VNI.csv')
+    VNI_data = getData('https://raw.githubusercontent.com/grassnhi/AI_ML_DL/main/AppWeb/Data/VNI.csv')
 
     st.subheader('Pick up the Volume of VNI stock')
     priceCount = pd.DataFrame(VNI_data['Vol.'].value_counts()).head(50)
