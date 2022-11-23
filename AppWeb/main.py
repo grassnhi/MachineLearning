@@ -1,6 +1,5 @@
 import streamlit as st
 import pandas as pd
-import plotly.express as px
 
 from sklearn.ensemble import RandomForestRegressor
 from sklearn.metrics import mean_absolute_error, mean_squared_error, r2_score
@@ -48,8 +47,6 @@ with dataset:
     st.subheader('Pick up the Volume of VNI stock')
     priceCount = pd.DataFrame(VNI_data['Vol.'].value_counts()).head(50)
     st.bar_chart(priceCount)
-
-    st.write(px.data.gapminder())
 
 with features:
     st.title('Datetime and stock price')
